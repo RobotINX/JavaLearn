@@ -1,0 +1,144 @@
+1、	命名规则：
+	只能是大小写字母、$、_开头
+	只能包含大小写字母、$、_和数字
+	
+	命名规范：
+	类或者接口：单词的首字母必须大写
+	方法或者变量：第一个单词首字母小写，之后每个单词的首字母大写
+	常量：所有字母都是大写，不同单词之间用_隔开
+2、	变量类型的赋值问题：
+	byte b1=3,b2=4,b;
+	b=b1+b2;//错误，变量相加会先进行类型提升，在这里b1+b2首先转换成int在进行相加，结果是int
+	b=3+4;//正确，这里会先进行变量相加，之后判断结果是否在byte类型的范围内，是的话赋值成功
+	
+	原因：	因为变量相加，会首先看类型问题，最终把结果赋值的也会考虑类型问题。因为变量相加，会首先看类型问题，最终把结果赋值的也会考虑类型问题。
+	常量相加，首先做加法，然后看结果是否在赋值的数据类型范围内，如果不是，才报错。
+3、	超出变量类型范围赋值：
+	byte b = 130;
+	思考过程：
+		A:获取130这个数据的二进制(int在内存里是4位字节)
+			00000000 00000000 00000000 10000010
+			130的原码，反码，补码
+		B:做截取操作，截成byte类型(byte在内存里是1位字节)
+			10000010 
+			这个结果是补码。
+		C:已知补码求原码。
+					符号位		数值位
+			补码：	1			0000010
+			
+			反码：	1			0000001
+			
+			原码：	1			1111110
+			
+		另一个过程：
+			byte类型的取值范围是：-128-127
+			127是最大值，128是则变成了-128，那么130则是-126
+4、	0:48	a:65	A:97
+		System.out.println('a'+1);//字符编码+1，结果是字符编码
+		System.out.println("hello"+'a'+1);//字符串+字符+1，结果是字符串，
+		System.out.println('a'+1+"hello");//字符编码+1+字符串：字符编码+字符串，结果是字符串
+		System.out.println("5+5="+5+5);//字符串+5+5，结果是字符串
+		System.out.println(5+5+"=5+5");//5+5+字符串：数字+字符串，结果是字符串
+		System.out.println("x+y="+z;//"x+y="和变量z的值拼接成一个字符串，然后由println输出
+5、	变量的问题，首先看变量在内存中存放的形式，其次看变量在内存中的运行机制
+	不要单看结果从形式上看问题，要看内存和机制进行判断，看本质
+	在内存中，整数的存放形式是基本的二进制储存，而浮点数的存放形式是指数形式的二进制储存
+	2 个字节char:2^8
+	2个字节short:2^(8*2)
+	4个字节int:2^(8*4)
+	8个字节long:2^(8*8)
+	4个字节float:1bit(符号位)，8bits(指数位)，23bits(尾数位)
+	8个字节double:1bit(符号位)，11bits(指数位)，52bits(尾数位)
+	所以默认转换的大小顺序是：char-short-int(整数默认类型)-float-double(浮点数默认类型)
+		Integer.MAX_VALUE   int类型的最大值
+		Integer.MIN_VALUE   int类型的最小值
+		Integer.SIZE     	以二进制补码形式表示int的位数
+		Integer.TYPE        表示基本类型int的Class实例
+6、	源码：数字转换成二进制
+	反码：源码二进制取反
+	补码：反码二进制+1
+	正数的源反补相同
+	内存中储存的是数字的补码
+7、	double d1 = 5/2;//z = 2.0
+	double d2 = 5*1.0/2;//z = 2.5
+	double d3 = 13.0/4;
+	double d4 = (13+0.0)/4;
+8、	扩展的赋值运算符+=、-=、*=、/=、%=隐含了强制类型转换
+	short s = 1;
+	s += 1;//等价于s = (short)(s + 1);
+9、	&:同真才真；
+	|:有真则真
+	!:非真则加，非假则真
+	^|:同则假，不同则真
+	&&和&:&&左边为假时，不计算右边
+	||和|:||左边为真时；不计算右边
+	短路效果：只要确定最终结果，则不计算右边
+	int x = 3;
+	int y = 4;
+	boolean b1 = (x++ == 3 & y++ == 4);
+	//boolean b1 = (++x ==3 & y++ == 4);
+	System.out.println(x);
+	System.out.println(y);
+	System.out.println(boolean);
+10、位运算符的作用和原理：
+	把变量a和b的值交换的四种方法
+	快速计算2*8的结果
+	另：乘除法的计算原理
+11、给出一个数字，分别求出它的每一位上的数字：
+		int型数据相除的结果是int型，不会四舍五入，而是直接舍弃小数部分
+		两位数%10之后得到的结果是这个两位数的个位数
+		只要将得到的数字依次/10，得到的就是一个去掉已经得到数字的两位数
+			Scanner input = new Scanner(System.in);
+			int number = input.nextInt();
+			int[] digit = new int[20];
+			for(int i = 0; i < digit.length; i++)
+				digit[i] = number / (int)Math.pow(10,i) % 10;
+			for(int i = 0; i < digit.length; i ++)
+				System.out.println(digit[i]);
+12、常用的转义字符：
+	\t	制表符
+	\n	换行符，另起一行，并把光标移到行首
+	\r	回车符，返回当前行行首
+	\b	退格符，光标往前移动一位
+	\'	单引号
+	\"	双引号
+	\\	反斜杠
+13、break和continue的区别
+	break：跳出当前层循环，跳出一整个for
+	continue：跳出当前次循环，只是当前次的循环体不执行
+	给循环取名字：
+		waiceng:for(int i = 1; i <= 9; i++){
+				neiceng:for(int j = 1; j <= i; j++){
+					
+					if(j == 4){
+						//continue neiceng;
+						//continue waiceng;
+					}
+					System.out.print(i+"*"+j+"="+(i*j)+"\t");
+				}
+				System.out.println();
+			}
+14、内存分配堆栈：
+		栈 存储局部变量			
+			array1等三个数组名称都是储存在栈中的局部变量，值是new int[2]分配到的首个地址值
+		堆 存储new出来的东西
+			数组名跟数组是分开储存的，其中数组new int[2]等都是储存在堆中，可以根据地址值找到
+			int[] array1 = new int[2];
+			int[] array2 = new int[3];
+			int[] array3 = array2;
+			array3 = array1;//这里的赋值表达式表示将array1的地址值赋给array3
+15、写出常用数组操作的方法
+16、二维数组中:int[] x,y[];//创建一个变量x，同时创建一个没有定义大小也没有分配地址值的二维数组y[][]
+	int[][] array2D = new int[5][];
+	//创建一个有5个元素的二维数组，数组有地址值，但里面的元素没有地址值，意味着array2D[0]等元素是空值
+17、大部分的Exception问题的解释
+18、BufferedReader BFReader=new BufferedReader(new InputStreamReader(System.in));
+	Math类中的round,random,abs
+	bigdemical
+	decimalformat
+	字符串方法
+	字符串转数字
+	封装类Integer.valueOf("12")
+	Integer.parseInt("12")
+	String  age = Integer.toBinaryString(16); 
+	String age = Integer.toHexString(16); 
