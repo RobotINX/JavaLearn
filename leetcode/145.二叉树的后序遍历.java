@@ -1,12 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 /*
- * @lc app=leetcode.cn id=94 lang=java
+ * @lc app=leetcode.cn id=145 lang=java
  *
- * [94] 二叉树的中序遍历
+ * [145] 二叉树的后序遍历
  */
 
 // @lc code=start
@@ -27,13 +25,13 @@ import javax.naming.spi.DirStateFactory.Result;
  */
 class Solution {
     List<Integer> result = new ArrayList<Integer>();
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         if(root == null){
             return result;
         }
-        inorderTraversal(root.left);
+        postorderTraversal(root.left);
+        postorderTraversal(root.right);
         result.add(root.val);
-        inorderTraversal(root.right);
         return result;
     }
 }

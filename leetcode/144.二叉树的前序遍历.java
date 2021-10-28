@@ -1,14 +1,13 @@
+package leetcode;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 /*
- * @lc app=leetcode.cn id=94 lang=java
+ * @lc app=leetcode.cn id=144 lang=java
  *
- * [94] 二叉树的中序遍历
+ * [144] 二叉树的前序遍历
  */
-
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -26,14 +25,15 @@ import javax.naming.spi.DirStateFactory.Result;
  * }
  */
 class Solution {
+    
     List<Integer> result = new ArrayList<Integer>();
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         if(root == null){
             return result;
         }
-        inorderTraversal(root.left);
         result.add(root.val);
-        inorderTraversal(root.right);
+        preorderTraversal(root.left);
+        preorderTraversal(root.right);
         return result;
     }
 }
