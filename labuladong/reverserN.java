@@ -1,3 +1,5 @@
+package labuladong;
+
 public class reverserN{
     ListNode successor = null;
     ListNode reverseN(ListNode head, int n) {

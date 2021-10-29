@@ -1,3 +1,5 @@
+package note;
+
 import java.util.Scanner;
 class Main{
 	static int moveTime = 0;
@@ -12,19 +14,19 @@ class Main{
 		System.out.println(moveTime-1);
 	}
 	
-	//递归函数hanoi
-	//将plate个碟子从a借助b移动到c
+	//閫掑綊鍑芥暟hanoi
+	//灏唒late涓瀛愪粠a鍊熷姪b绉诲姩鍒癱
 	public static void hanoi(int plate, char a, char b, char c){
-		//当只有一个碟子的时候，直接把碟子从a移到c
+		//褰撳彧鏈変竴涓瀛愮殑鏃跺�欙紝鐩存帴鎶婄瀛愪粠a绉诲埌c
 		if(plate == 1){
 			System.out.println(a + "-->" + c);
 			moveTime += 1;
 		}
 		else{
-			hanoi(plate-1, a, c, b);//否则，将plate-1个碟子从a借助b移动到c
+			hanoi(plate-1, a, c, b);//鍚﹀垯锛屽皢plate-1涓瀛愪粠a鍊熷姪b绉诲姩鍒癱
 			System.out.println(a + "-->" + c);
 			moveTime += 1;
-			hanoi(plate-1, b, a, c);//最后将plate-1个碟子从b借助a移动到c
+			hanoi(plate-1, b, a, c);//鏈�鍚庡皢plate-1涓瀛愪粠b鍊熷姪a绉诲姩鍒癱
 		}
 	}
 }

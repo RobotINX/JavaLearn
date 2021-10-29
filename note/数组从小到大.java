@@ -1,24 +1,26 @@
+package note;
+
 /* 
-BASIC-13»ù´¡Á·Ï° ÊýÁÐÅÅÐò ?
-Ê±¼äÏÞÖÆ£º1.0s ? ÄÚ´æÏÞÖÆ£º512.0MB
-¹Ø¼ü×Ö£ºÊý×é ÅÅÐò
-ÎÊÌâÃèÊö
-¡¡¡¡¸ø¶¨Ò»¸ö³¤¶ÈÎªnµÄÊýÁÐ£¬½«Õâ¸öÊýÁÐ°´´ÓÐ¡µ½´óµÄË³ÐòÅÅÁÐ¡£1<=n<=200
-ÊäÈë¸ñÊ½
-¡¡¡¡µÚÒ»ÐÐÎªÒ»¸öÕûÊýn¡£
-¡¡¡¡µÚ¶þÐÐ°üº¬n¸öÕûÊý£¬Îª´ýÅÅÐòµÄÊý£¬Ã¿¸öÕûÊýµÄ¾ø¶ÔÖµÐ¡ÓÚ10000¡£
-Êä³ö¸ñÊ½
-¡¡¡¡Êä³öÒ»ÐÐ£¬°´´ÓÐ¡µ½´óµÄË³ÐòÊä³öÅÅÐòºóµÄÊýÁÐ¡£
-ÑùÀýÊäÈë
+BASIC-13åŸºç¡€ç»ƒä¹  æ•°åˆ—æŽ’åº ?
+æ—¶é—´é™åˆ¶ï¼š1.0s ? å†…å­˜é™åˆ¶ï¼š512.0MB
+å…³é”®å­—ï¼šæ•°ç»„ æŽ’åº
+é—®é¢˜æè¿°
+ã€€ã€€ç»™å®šä¸€ä¸ªé•¿åº¦ä¸ºnçš„æ•°åˆ—ï¼Œå°†è¿™ä¸ªæ•°åˆ—æŒ‰ä»Žå°åˆ°å¤§çš„é¡ºåºæŽ’åˆ—ã€‚1<=n<=200
+è¾“å…¥æ ¼å¼
+ã€€ã€€ç¬¬ä¸€è¡Œä¸ºä¸€ä¸ªæ•´æ•°nã€‚
+ã€€ã€€ç¬¬äºŒè¡ŒåŒ…å«nä¸ªæ•´æ•°ï¼Œä¸ºå¾…æŽ’åºçš„æ•°ï¼Œæ¯ä¸ªæ•´æ•°çš„ç»å¯¹å€¼å°äºŽ10000ã€‚
+è¾“å‡ºæ ¼å¼
+ã€€ã€€è¾“å‡ºä¸€è¡Œï¼ŒæŒ‰ä»Žå°åˆ°å¤§çš„é¡ºåºè¾“å‡ºæŽ’åºåŽçš„æ•°åˆ—ã€‚
+æ ·ä¾‹è¾“å…¥
 5
 8 3 6 4 9
-ÑùÀýÊä³ö
+æ ·ä¾‹è¾“å‡º
 3 4 6 8 9
 */
 import java.util.Scanner;
-class Main{
+class æ•°ç»„ä»Žå°åˆ°å¤§{
 
-	//Êä³öÃ¿Ò»¸öÊý×éÖÐµÄÃ¿Ò»¸ö×Ö·û
+	//è¾“å‡ºæ¯ä¸€ä¸ªæ•°ç»„ä¸­çš„æ¯ä¸€ä¸ªå­—ç¬¦
 	public static void PrintArrayElement(int[] array){
 		for(int i = 0; i < array.length; i++){
 			System.out.print(array[i] + " ");
@@ -26,14 +28,14 @@ class Main{
 		System.out.println();
 	}
 	
-	//½«×Ö·û´®ÖÐµÄÔªËØ×ªµ½Êý×éÖÐ
+	//å°†å­—ç¬¦ä¸²ä¸­çš„å…ƒç´ è½¬åˆ°æ•°ç»„ä¸­
 	public static void StringToArray(String[] arrayString, int[] arrayInt){
 		for(int i = 0; i < arrayString.length; i++){
 			arrayInt[i] = Integer.parseInt(arrayString[i]);
 		}
 	}
 	
-	//½«Êý×éÖÐµÄÔªËØ°´ÕÕ´ÓÐ¡µ½´óµÄË³ÐòÖØÐÂÅÅÁÐ
+	//å°†æ•°ç»„ä¸­çš„å…ƒç´ æŒ‰ç…§ä»Žå°åˆ°å¤§çš„é¡ºåºé‡æ–°æŽ’åˆ—
 	public static void ResetArraySmallToBig(int[] array){
 		for(int i = 0; i < array.length; i++){
 			for(int j = i + 1; j < array.length; j++){
@@ -51,11 +53,12 @@ class Main{
 		int arrayLength = input.nextInt();
 		input.nextLine();
 		String string = input.nextLine();
+		input.close();
 		String[] arrayString = string.split(" ");
 		int[] arrayInt = new int[arrayLength];
 		StringToArray(arrayString,arrayInt);
 		//PrintArrayElement(arrayInt);
-		ResetArrayBigToSmall(arrayInt);
+		ResetArraySmallToBig(arrayInt);
 		PrintArrayElement(arrayInt);
     }
 }

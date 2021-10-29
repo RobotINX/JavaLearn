@@ -1,5 +1,7 @@
-class Main{
-	//¶ş·ÖËÑË÷·¨²éÕÒÔªËØ
+package note;
+
+class äºŒåˆ†æœç´¢æ³•{
+	//äºŒåˆ†æœç´¢æ³•æŸ¥æ‰¾å…ƒç´ 
 	public static int BinarySearch(int[] array, int x){
 		int left = 0;
 		int right = array.length - 1;
@@ -15,14 +17,14 @@ class Main{
 		return -1;
 	}
 	
-	//¸øÊı×éÖĞµÄÃ¿Ò»¸öÔªËØËæ»ú¸³Öµ
+	//ç»™æ•°ç»„ä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ éšæœºèµ‹å€¼
 	public static void setRandomValue(int[] array){
 		for(int i = 0; i < array.length; i++){
 			array[i] = (int)(Math.random()*100);
 		}
 	}
 	
-	//½«Êı×éÖĞµÄÔªËØ°´ÕÕ´ÓĞ¡µ½´óµÄË³ĞòÖØĞÂÅÅÁĞ
+	//å°†æ•°ç»„ä¸­çš„å…ƒç´ æŒ‰ç…§ä»å°åˆ°å¤§çš„é¡ºåºé‡æ–°æ’åˆ—
 	public static void ResetArraySmallToBig(int[] array){
 		for(int i = 0; i < array.length; i++){
 			for(int j = i + 1; j < array.length; j++){

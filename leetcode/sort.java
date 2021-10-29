@@ -1,3 +1,5 @@
+package leetcode;
+
 class sort{
     public static void exchange(int[] nums, int index1, int index2){
         int tmp = nums[index1];

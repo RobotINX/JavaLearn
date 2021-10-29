@@ -1,21 +1,22 @@
-import java.util.Scanner;
-class test{
+package note;
+
+class å‡½æ•°å†™æ•°ç»„å¸¸ç”¨æ“ä½œ{
 	
-	//¸øÊı×éÖĞµÄÃ¿Ò»¸öÔªËØËæ»ú¸³Öµ
+	//ç»™æ•°ç»„ä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ éšæœºèµ‹å€¼
 	public static void setRandomValue(int[] array){
 		for(int i = 0; i < array.length; i++){
 			array[i] = (int)(Math.random()*100);
 		}
 	}
 	
-	//Êä³öÊı×éÖĞµÄÃ¿Ò»¸öÔªËØ
-	//Ò»ĞĞÒ»¸öÔªËØ
+	//è¾“å‡ºæ•°ç»„ä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ 
+	//ä¸€è¡Œä¸€ä¸ªå…ƒç´ 
 	public static void printArrayElement1(int[] array){
 		for(int i = 0; i < array.length; i++){
 			System.out.println(array[i]);
 		}
 	}
-	//ËùÓĞÔªËØÔÚÍ¬Ò»ĞĞÊä³ö
+	//æ‰€æœ‰å…ƒç´ åœ¨åŒä¸€è¡Œè¾“å‡º
 	public static void printArrayElement(int[] array){
 		for(int i = 0; i < array.length; i++){
 			if(i == array.length-1){
@@ -27,7 +28,7 @@ class test{
 		}
 	}
 	
-	//»ñÈ¡Êı×éÖĞÔªËØµÄ×î´óÖµ
+	//è·å–æ•°ç»„ä¸­å…ƒç´ çš„æœ€å¤§å€¼
 	public static int getMax(int[] array){
 		int max = array[0];
 		for(int i = 1; i < array.length; i++){
@@ -36,7 +37,7 @@ class test{
 		return max;
 	}
 	
-	//»ñÈ¡Êı×éÖĞÔªËØµÄ×îĞ¡Öµ
+	//è·å–æ•°ç»„ä¸­å…ƒç´ çš„æœ€å°å€¼
 	public static int getMin(int[] array){
 		int min = array[0];
 		for(int i = 1; i < array.length; i++){
@@ -45,32 +46,32 @@ class test{
 		return min;
 	}
 	
-	//Êı×éÔªËØÄæĞò1
+	//æ•°ç»„å…ƒç´ é€†åº1
 	public static void resetArrayOrder1(int[] array){
-		/* 	´íÎó×ö·¨£¬ÕâÀïµÄ¸³ÖµÔËËãÊÇµÄtempArrayµÃµ½ÁËarrayµÄµØÖ·
-			×îÖÕµ¼ÖÂµÄ½á¹ûÊÇÄæĞòÒ»°ëÖ®ºó¶ªÊ§ÁËÁíÒ»°ëÔªËØ
+		/* 	é”™è¯¯åšæ³•ï¼Œè¿™é‡Œçš„èµ‹å€¼è¿ç®—æ˜¯çš„tempArrayå¾—åˆ°äº†arrayçš„åœ°å€
+			æœ€ç»ˆå¯¼è‡´çš„ç»“æœæ˜¯é€†åºä¸€åŠä¹‹åä¸¢å¤±äº†å¦ä¸€åŠå…ƒç´ 
 			int[] tempArray = array;
 			for(int i = 0, j = array.length - 1; i < array.length; i++,j--){
 				array[i] = tempArray[j];
 			}
 		*/
 		int[] tempArray = new int[15];
-		//ÄæĞò»ñµÃarray[]¸÷¸öÔªËØ£¬²¢ÇÒ´æ·Åµ½tempArray[]ÖĞ
+		//é€†åºè·å¾—array[]å„ä¸ªå…ƒç´ ï¼Œå¹¶ä¸”å­˜æ”¾åˆ°tempArray[]ä¸­
 		for(int i = 0, j = array.length - 1; j >= 0; i++, j--){
 			tempArray[i] = array[j];
 		}
-		//½«tempArray[]ÖĞµÄÔªËØ·Åµ½array[]ÖĞ
+		//å°†tempArray[]ä¸­çš„å…ƒç´ æ”¾åˆ°array[]ä¸­
 		for(int i = 0; i <array.length; i++){
 			array[i] = tempArray[i];
 		}
 	}
 	
-	//Êı×éÔªËØÄæĞò2
+	//æ•°ç»„å…ƒç´ é€†åº2
 	public static void resetArrayOrder2(int[] array){
-		//ÀûÓÃÒì»òÍ¬Ò»¸öÊıÁ½´ÎµÃµ½Ô­Êı°ÑÁ½¸öÔªËØ½»»»Î»ÖÃ
-		//Á½¸öĞèÒª½»»»µÄÊıµÄÏÂ±êiºÍj³õÊ¼ÖµÎª0ºÍÊı×éµÄ³¤¶È-1
-		//µ±i<Êı×é³¤¶ÈµÄÒ»°ë»òÕßj´óÓÚÇÒµÈÓÚÊı×é³¤¶ÈµÄÒ»°ëÊ±Ö´ĞĞ½»»»
-		//ÁíÍâ£¬Èç¹ûiºÍjÏàµÈÒ²ÒªÍ£Ö¹½»»»
+		//åˆ©ç”¨å¼‚æˆ–åŒä¸€ä¸ªæ•°ä¸¤æ¬¡å¾—åˆ°åŸæ•°æŠŠä¸¤ä¸ªå…ƒç´ äº¤æ¢ä½ç½®
+		//ä¸¤ä¸ªéœ€è¦äº¤æ¢çš„æ•°çš„ä¸‹æ ‡iå’Œjåˆå§‹å€¼ä¸º0å’Œæ•°ç»„çš„é•¿åº¦-1
+		//å½“i<æ•°ç»„é•¿åº¦çš„ä¸€åŠæˆ–è€…jå¤§äºä¸”ç­‰äºæ•°ç»„é•¿åº¦çš„ä¸€åŠæ—¶æ‰§è¡Œäº¤æ¢
+		//å¦å¤–ï¼Œå¦‚æœiå’Œjç›¸ç­‰ä¹Ÿè¦åœæ­¢äº¤æ¢
 		//for(int i = 0, j = array.length - 1; i < array.length/2; i++, j--){
 		for(int i = 0, j = array.length - 1; i < j; i++, j--){
 			array[i] = array[i] ^ array[j];
@@ -79,7 +80,7 @@ class test{
 		}
 	}
 	
-	//Êı×éÔªËØ²éÕÒ
+	//æ•°ç»„å…ƒç´ æŸ¥æ‰¾
 	public static int searchElement(int[] array,int element){
 		/* 
 			int i = 0;
@@ -91,7 +92,7 @@ class test{
 			}
 			return i;
 		*/
-		int searchResult = -1;//Ä¬ÈÏ·µ»ØÖµ-1£¬Èç¹ûÕÒ²»µ½ÔªËØÔò·µ»Ø-1
+		int searchResult = -1;//é»˜è®¤è¿”å›å€¼-1ï¼Œå¦‚æœæ‰¾ä¸åˆ°å…ƒç´ åˆ™è¿”å›-1
 		for(int i = 0; i < array.length; i++){
 			if(array[i] == element){
 				searchResult = i;

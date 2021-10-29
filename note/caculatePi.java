@@ -1,4 +1,5 @@
-import java.util.Scanner;
+package note;
+
 class caculatePi{
 	public static void main(String args[]){
 		for(int time = 0; time <= 10; time++){

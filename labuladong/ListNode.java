@@ -1,3 +1,5 @@
+package labuladong;
+
 public class ListNode {
     int val;
     ListNode next;
