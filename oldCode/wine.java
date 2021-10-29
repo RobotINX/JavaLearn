@@ -1,6 +1,7 @@
-class Main{
+package oldCode;
+
+class wine{
 	public static void main(String[] args){
-		final double wine = 1000000;
 		for(int a = 1; a <= 20; a++){
 			for(int b = 1; b < a; b++){
 				for(int c = 1; c < b; c++){

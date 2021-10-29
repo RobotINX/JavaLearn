@@ -1,45 +1,51 @@
+package oldCode;
+
 /*
-	ÎÊÌâÃèÊö
-	¸ø¶¨Ô²µÄ°ë¾¶r£¬ÇóÔ²µÄÃæ»ý¡£
-	ÊäÈë¸ñÊ½
-	ÊäÈë°üº¬Ò»¸öÕûÊýr£¬±íÊ¾Ô²µÄ°ë¾¶¡£
-	Êä³ö¸ñÊ½
-	Êä³öÒ»ÐÐ£¬°üº¬Ò»¸öÊµÊý£¬ËÄÉáÎåÈë±£ÁôÐ¡Êýµãºó7Î»£¬±íÊ¾Ô²µÄÃæ»ý¡£
-	ËµÃ÷£ºÔÚ±¾ÌâÖÐ£¬ÊäÈëÊÇÒ»¸öÕûÊý£¬µ«ÊÇÊä³öÊÇÒ»¸öÊµÊý¡£
+	é—®é¢˜æè¿°
+	ç»™å®šåœ†çš„åŠå¾„rï¼Œæ±‚åœ†çš„é¢ç§¯ã€‚
+	è¾“å…¥æ ¼å¼
+	è¾“å…¥åŒ…å«ä¸€ä¸ªæ•´æ•°rï¼Œè¡¨ç¤ºåœ†çš„åŠå¾„ã€‚
+	è¾“å‡ºæ ¼å¼
+	è¾“å‡ºä¸€è¡Œï¼ŒåŒ…å«ä¸€ä¸ªå®žæ•°ï¼Œå››èˆäº”å…¥ä¿ç•™å°æ•°ç‚¹åŽ7ä½ï¼Œè¡¨ç¤ºåœ†çš„é¢ç§¯ã€‚
+	è¯´æ˜Žï¼šåœ¨æœ¬é¢˜ä¸­ï¼Œè¾“å…¥æ˜¯ä¸€ä¸ªæ•´æ•°ï¼Œä½†æ˜¯è¾“å‡ºæ˜¯ä¸€ä¸ªå®žæ•°ã€‚
 
-	¶ÔÓÚÊµÊýÊä³öµÄÎÊÌâ£¬ÇëÒ»¶¨¿´Çå³þÊµÊýÊä³öµÄÒªÇó£¬±ÈÈç±¾ÌâÖÐÒªÇó±£ÁôÐ¡Êýµãºó7Î»£¬ÔòÄãµÄ³ÌÐò±ØÐëÑÏ¸ñµÄÊä³ö7Î»Ð¡Êý£¬Êä³ö¹ý¶à»òÕß¹ýÉÙµÄÐ¡ÊýÎ»Êý¶¼ÊÇ²»ÐÐµÄ£¬¶¼»á±»ÈÏÎª´íÎó¡£
+	å¯¹äºŽå®žæ•°è¾“å‡ºçš„é—®é¢˜ï¼Œè¯·ä¸€å®šçœ‹æ¸…æ¥šå®žæ•°è¾“å‡ºçš„è¦æ±‚ï¼Œæ¯”å¦‚æœ¬é¢˜ä¸­è¦æ±‚ä¿ç•™å°æ•°ç‚¹åŽ7ä½ï¼Œåˆ™ä½ çš„ç¨‹åºå¿…é¡»ä¸¥æ ¼çš„è¾“å‡º7ä½å°æ•°ï¼Œè¾“å‡ºè¿‡å¤šæˆ–è€…è¿‡å°‘çš„å°æ•°ä½æ•°éƒ½æ˜¯ä¸è¡Œçš„ï¼Œéƒ½ä¼šè¢«è®¤ä¸ºé”™è¯¯ã€‚
 
-	ÊµÊýÊä³öµÄÎÊÌâÈç¹ûÃ»ÓÐÌØ±ðËµÃ÷£¬ÉáÈë¶¼ÊÇ°´ËÄÉáÎåÈë½øÐÐ¡£
+	å®žæ•°è¾“å‡ºçš„é—®é¢˜å¦‚æžœæ²¡æœ‰ç‰¹åˆ«è¯´æ˜Žï¼Œèˆå…¥éƒ½æ˜¯æŒ‰å››èˆäº”å…¥è¿›è¡Œã€‚
 
-	ÑùÀýÊäÈë
+	æ ·ä¾‹è¾“å…¥
 	4
-	ÑùÀýÊä³ö
+	æ ·ä¾‹è¾“å‡º
 	50.2654825
-	Êý¾Ý¹æÄ£ÓëÔ¼¶¨
-	1 <= r <= 10000¡£
-	ÌáÊ¾
-	±¾Ìâ¶Ô¾«¶ÈÒªÇó½Ï¸ß£¬Çë×¢Òâ¦ÐµÄÖµÓ¦¸ÃÈ¡½Ï¾«È·µÄÖµ¡£Äã¿ÉÒÔÊ¹ÓÃ³£Á¿À´±íÊ¾¦Ð£¬±ÈÈçPI=3.14159265358979323£¬Ò²¿ÉÒÔÊ¹ÓÃÊýÑ§¹«Ê½À´Çó¦Ð£¬±ÈÈçPI=atan(1.0)*4¡£
+	æ•°æ®è§„æ¨¡ä¸Žçº¦å®š
+	1 <= r <= 10000ã€‚
+	æç¤º
+	æœ¬é¢˜å¯¹ç²¾åº¦è¦æ±‚è¾ƒé«˜ï¼Œè¯·æ³¨æ„Ï€çš„å€¼åº”è¯¥å–è¾ƒç²¾ç¡®çš„å€¼ã€‚ä½ å¯ä»¥ä½¿ç”¨å¸¸é‡æ¥è¡¨ç¤ºÏ€ï¼Œæ¯”å¦‚PI=3.14159265358979323ï¼Œä¹Ÿå¯ä»¥ä½¿ç”¨æ•°å­¦å…¬å¼æ¥æ±‚Ï€ï¼Œæ¯”å¦‚PI=atan(1.0)*4ã€‚
 */
 /*
-	¹Ø¼üµã£ºËÄÉáÎåÈëÆßÎ»Ð¡Êý
-	°ë¾¶r£ºint
-	Ãæ»ýs£ºdouble
-	³£Á¿PI£º3.14159265358979323
-	ËÄÉáÎåÈë·½·¨£º
-		1¡¢temp=s*100000000£ºÏÈ½«½á¹û·Å´ó100000000
-		2¡¢mod=temp%10£ºÇó·Å´ó100000000ºó¸öÎ»ÊýÊÇ¶àÉÙ
-		3¡¢if(mod>5&&mod<=9)
+	å…³é”®ç‚¹ï¼šå››èˆäº”å…¥ä¸ƒä½å°æ•°
+	åŠå¾„rï¼šint
+	é¢ç§¯sï¼šdouble
+	å¸¸é‡PIï¼š3.14159265358979323
+	å››èˆäº”å…¥æ–¹æ³•ï¼š
+		1ã€temp=s*100000000ï¼šå…ˆå°†ç»“æžœæ”¾å¤§100000000
+		2ã€mod=temp%10ï¼šæ±‚æ”¾å¤§100000000åŽä¸ªä½æ•°æ˜¯å¤šå°‘
+		3ã€if(mod>5&&mod<=9)
 				temp=temp/10+1;
 				result=temp/10000000;
-		4¡¢if(mod<=4&&mod>=0)
+		4ã€if(mod<=4&&mod>=0)
 				temp=temp/10;
 				result=temp/10000000;
 */
+/*
 import java.util.Scanner;
 import java.math.BigDecimal;
-class Main{
+import java.nio.Buffer;
+
+class theAreaOfCircle{
 	public static void main(String args[]){
 		Scanner input = new Scanner(System.in);
+		Buffer bf = new Buffer(System)
 		final double PI = 3.14159265358979323;
 		int r = input.nextInt();
 		double area = PI * r * r;;
@@ -53,3 +59,4 @@ class Main{
 		BigDecimal value = bg.multiply(bg.multiply(new BigDecimal(Math.PI))).setScale(7,BigDecimal.ROUND_HALF_UP);
 	}
 }
+*/

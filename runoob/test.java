@@ -1,4 +1,6 @@
-class Solution {
+package runoob;
+
+class test {
     public static int search(int[] nums, int target) {
         int index = -1;
 

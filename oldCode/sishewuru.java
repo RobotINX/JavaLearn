@@ -1,7 +1,10 @@
+package oldCode;
+
 import java.util.Scanner;
 class sishewuru{
 	public static void main(String args[]){
 		Scanner input = new Scanner(System.in);
+		input.close();
 		for(int i = 0; i <= 10; i++){
 			double number = 3.141592653654;
 			int digit = input.nextInt();

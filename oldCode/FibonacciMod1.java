@@ -1,20 +1,23 @@
+package oldCode;
+
 import java.util.Scanner;
-class Main{
+class FibonacciMod1{
 	public static void main(String args[]){
 		Scanner input = new Scanner(System.in);
-		int[] FibonacciMod = new int[1000001];//Êı×éFibonacciModÓÃÀ´±£´æÓàÊı
+		int[] FibonacciMod = new int[1000001];//æ•°ç»„FibonacciModç”¨æ¥ä¿å­˜ä½™æ•°
 		int n = input.nextInt();
-		//Ñ­»·ÓÃÀ´ÕÒ³öÖ±µ½FibonacciMod[n]µÄÓàÊı
+		input.close();
+		//å¾ªç¯ç”¨æ¥æ‰¾å‡ºç›´åˆ°FibonacciMod[n]çš„ä½™æ•°
 		for(int i = 1;i <= n;i++){
-			//ÏÈ±£´æFibonacciMod[1]ºÍFibonacciMod[2]
+			//å…ˆä¿å­˜FibonacciMod[1]å’ŒFibonacciMod[2]
 			if(i==1)	
 				FibonacciMod[i] = 1;
 			else if(i==2)	
 				FibonacciMod[i] = 1;
-			else{		//Èç¹ûFibonacciMod[i-1]+FibonacciMod[i-2]<100007,ÄÇÃ´Ö±½Ó½«FibonacciMod[i-1]+FibonacciMod[i-2]¸³Öµ¸øFibonacciMod[i]
+			else{		//å¦‚æœFibonacciMod[i-1]+FibonacciMod[i-2]<100007,é‚£ä¹ˆç›´æ¥å°†FibonacciMod[i-1]+FibonacciMod[i-2]èµ‹å€¼ç»™FibonacciMod[i]
 				if(FibonacciMod[i-1]+FibonacciMod[i-2]<10007)
 					FibonacciMod[i] = FibonacciMod[i-1] + FibonacciMod[i-2];
-			//·ñÔò½«FibonacciMod[i-1]+FibonacciMod[i-2]-100007¸³Öµ¸øFibonacciMod[i]
+			//å¦åˆ™å°†FibonacciMod[i-1]+FibonacciMod[i-2]-100007èµ‹å€¼ç»™FibonacciMod[i]
 				else
 					FibonacciMod[i] = FibonacciMod[i-1] + FibonacciMod[i-2] - 10007;
 			}

@@ -1,18 +1,20 @@
-class pailie{
+package oldCode;
+
+class pailie_example{
 	public static void main(String[] args){  
 		String string = "ABC";
 		char[] array = string.toCharArray();
-		pailie(array, 0);  
+		pailief(array, 0);  
 	}
 	
-	public static void pailie(char[] array, int start){    
+	public static void pailief(char[] array, int start){    
 		if(start == array.length)
 			print(array);
 		else  
 			for(int i = start; i < array.length; i++){  
-				exchange(array,start,i);  //  ½»»»ÔªËØ  
-				pailie(array,start+1);  //½»»»ºó£¬ÔÙ½øĞĞÈ«ÅÅÁĞËã·¨  
-				exchange(array,start,i);  //»¹Ô­³ÉÔ­À´µÄÊı×é£¬±ãÓÚÏÂÒ»´ÎµÄÈ«ÅÅÁĞ  
+				exchange(array,start,i);  //  äº¤æ¢å…ƒç´   
+				pailief(array,start+1);  //äº¤æ¢åï¼Œå†è¿›è¡Œå…¨æ’åˆ—ç®—æ³•  
+				exchange(array,start,i);  //è¿˜åŸæˆåŸæ¥çš„æ•°ç»„ï¼Œä¾¿äºä¸‹ä¸€æ¬¡çš„å…¨æ’åˆ—  
 			}
 	} 
 	  

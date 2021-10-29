@@ -1,4 +1,6 @@
-class Main{
+package oldCode;
+
+class candy{
 	public static void main(String[] args){
 		int[] array = new int[1000000];
 		int a = 257;

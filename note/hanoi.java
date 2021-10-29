@@ -9,6 +9,7 @@ class Main{
 		char a = 'A';
 		char b = 'B';
 		char c = 'C';
+		input.close();
 		hanoi(plate,a,b,c);
 		moveTime += 1;
 		System.out.println(moveTime-1);
