@@ -12,11 +12,4 @@ public class reverserN{
         head.next = successor;
         return last;
     }
-
-    public static void main(String[] args) {
-        int[] nums = new int[]{1,2,3,4,5,6};
-        ListNode head = new ListNode(nums);
-        head.listNodePrint(head);
-        
-    }
 }
