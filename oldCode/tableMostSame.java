@@ -1,9 +1,12 @@
+package oldCode;
+
 import java.util.Scanner;
-class Main{
+class tableMostSame{
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		String string1 = input.next();
 		String string2 = input.next();
+		input.close();
 		char[] array1 = string1.toCharArray();
 		char[] array2 = string2.toCharArray();
 		int mostSame = mostSame(array1, array2);

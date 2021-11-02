@@ -1,14 +1,17 @@
+package note;
+
 import java.util.Scanner;
-class Main{
+class å…¨ç»„åˆ{
 	public static void main(String args[]){
 		Scanner input = new Scanner(System.in);
 		int m = input.nextInt();
 		int n = input.nextInt();
+		input.close();
 		String string = "";
 		System.out.println(combo(string,m,n));
 	}
 	
-	//m¸öÇòÀïÈ¡n¸öÇò
+	//mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡nï¿½ï¿½ï¿½ï¿½
 	public static String combo(String string, int m, int n){
 		if(n == 1){
 			string += (char)('A'+1);

@@ -1,4 +1,6 @@
-class Main{
+package oldCode;
+
+class birthday{
 	public static void main(String[] args){
 		final int N = 1000*1000;
 		int count = 0;

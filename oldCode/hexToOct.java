@@ -1,29 +1,31 @@
+package oldCode;
+
 import java.util.Scanner;
-class Main {
-    public static String hexToOct(String hexStr){
+class hexToOct {
+    public static String hexToOctf(String hexStr){
         int number = 0;
-        hexStr = hexStr.toUpperCase();//°ÑÊäÈëµÄÊ®Áù½øÖÆÊı×ª»»³É´óĞ´×ÖÄ¸
+        hexStr = hexStr.toUpperCase();//æŠŠè¾“å…¥çš„åå…­è¿›åˆ¶æ•°è½¬æ¢æˆå¤§å†™å­—æ¯
         char[] hexArray = hexStr.toCharArray();
         int[] numInt = new int[hexArray.length];
 		
-	//°Ñ×Ö·ûÊı×éÖĞµÄ×Ö·û×ª»»³ÉÊı×Ö
+	//æŠŠå­—ç¬¦æ•°ç»„ä¸­çš„å­—ç¬¦è½¬æ¢æˆæ•°å­—
         for(int i = 0; i <hexArray.length; i++){
-            if(hexArray[i]<='F' && hexArray[i]>='A'){//Èç¹ûÊÇ×Ö·û£¬ÄÇÃ´×ª»»³ÉÊ®½øÖÆÊı×Ö10-15
+            if(hexArray[i]<='F' && hexArray[i]>='A'){//å¦‚æœæ˜¯å­—ç¬¦ï¼Œé‚£ä¹ˆè½¬æ¢æˆåè¿›åˆ¶æ•°å­—10-15
                 numInt[i] = hexArray[i] - 55;
             }
-            else {//Èç¹ûÊÇÊı×ÖÔò²»±ä£¬µ«ÊÇÒª×ª»»³ÉASCIIÂë±íÖĞÊı×Ö¶ÔÓ¦µÄ±àÂë
+            else {//å¦‚æœæ˜¯æ•°å­—åˆ™ä¸å˜ï¼Œä½†æ˜¯è¦è½¬æ¢æˆASCIIç è¡¨ä¸­æ•°å­—å¯¹åº”çš„ç¼–ç 
                 numInt[i] = hexArray[i]-48;
             }
         }
 		
-        //°Ñ»ñÈ¡µ½µÄÊı×é×ª»»³ÉÊ®½øÖÆÊı×Ö
+        //æŠŠè·å–åˆ°çš„æ•°ç»„è½¬æ¢æˆåè¿›åˆ¶æ•°å­—
         for(int i = 0; i < hexArray.length; i++){
             int digit = hexArray.length - i -1;
             number += numInt[i]*Math.pow(16, digit);
         }
 	System.out.println(number);
 		
-	//°ÑµÃµ½µÄÊ®½øÖÆÊı×Ö×ª»»³É°Ë½øÖÆÊı×Ö
+	//æŠŠå¾—åˆ°çš„åè¿›åˆ¶æ•°å­—è½¬æ¢æˆå…«è¿›åˆ¶æ•°å­—
         String octStr = "";
         do{
             octStr += number % 8;
@@ -31,7 +33,7 @@ class Main {
         }while(number>0);
         System.out.println(octStr);
         
-        //°Ñ×Ö·ûÊı×éÖĞµÄÔªËØµ¹Ğò
+        //æŠŠå­—ç¬¦æ•°ç»„ä¸­çš„å…ƒç´ å€’åº
         char[] octChar = octStr.toCharArray();
         for(int i = 0; i < octChar.length/2; i++){
             int j = octChar.length-i-1;
@@ -51,7 +53,8 @@ class Main {
         // TODO code application logic here
         Scanner input = new Scanner(System.in);
         String hexStr = input.next();
-        System.out.println(hexToOct(hexStr));
+        input.close();
+        System.out.println(hexToOctf(hexStr));
     }
 }
 

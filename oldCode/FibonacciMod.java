@@ -1,26 +1,28 @@
-/*
-	ÎÊÌâÃèÊö
-	FibonacciÊýÁÐµÄµÝÍÆ¹«Ê½Îª£ºFn=Fn-1+Fn-2£¬ÆäÖÐF1=F2=1¡£
+package oldCode;
 
-	µ±n±È½Ï´óÊ±£¬FnÒ²·Ç³£´ó£¬ÏÖÔÚÎÒÃÇÏëÖªµÀ£¬Fn³ýÒÔ10007µÄÓàÊýÊÇ¶àÉÙ¡£
+/*
+	é—®é¢˜æè¿°
+	Fibonacciæ•°åˆ—çš„é€’æŽ¨å…¬å¼ä¸ºï¼šFn=Fn-1+Fn-2ï¼Œå…¶ä¸­F1=F2=1ã€‚
 
-	ÊäÈë¸ñÊ½
-	ÊäÈë°üº¬Ò»¸öÕûÊýn¡£
-	Êä³ö¸ñÊ½
-	Êä³öÒ»ÐÐ£¬°üº¬Ò»¸öÕûÊý£¬±íÊ¾Fn³ýÒÔ10007µÄÓàÊý¡£
-	ËµÃ÷£ºÔÚ±¾ÌâÖÐ£¬´ð°¸ÊÇÒªÇóFn³ýÒÔ10007µÄÓàÊý£¬Òò´ËÎÒÃÇÖ»ÒªÄÜËã³öÕâ¸öÓàÊý¼´¿É£¬¶ø²»ÐèÒªÏÈ¼ÆËã³öFnµÄ×¼È·Öµ£¬ÔÙ½«¼ÆËãµÄ½á¹û³ýÒÔ10007È¡ÓàÊý£¬Ö±½Ó¼ÆËãÓàÊýÍùÍù±ÈÏÈËã³öÔ­ÊýÔÙÈ¡Óà¼òµ¥¡£
+	å½“næ¯”è¾ƒå¤§æ—¶ï¼ŒFnä¹Ÿéžå¸¸å¤§ï¼ŒçŽ°åœ¨æˆ‘ä»¬æƒ³çŸ¥é“ï¼ŒFné™¤ä»¥10007çš„ä½™æ•°æ˜¯å¤šå°‘ã€‚
+
+	è¾“å…¥æ ¼å¼
+	è¾“å…¥åŒ…å«ä¸€ä¸ªæ•´æ•°nã€‚
+	è¾“å‡ºæ ¼å¼
+	è¾“å‡ºä¸€è¡Œï¼ŒåŒ…å«ä¸€ä¸ªæ•´æ•°ï¼Œè¡¨ç¤ºFné™¤ä»¥10007çš„ä½™æ•°ã€‚
+	è¯´æ˜Žï¼šåœ¨æœ¬é¢˜ä¸­ï¼Œç­”æ¡ˆæ˜¯è¦æ±‚Fné™¤ä»¥10007çš„ä½™æ•°ï¼Œå› æ­¤æˆ‘ä»¬åªè¦èƒ½ç®—å‡ºè¿™ä¸ªä½™æ•°å³å¯ï¼Œè€Œä¸éœ€è¦å…ˆè®¡ç®—å‡ºFnçš„å‡†ç¡®å€¼ï¼Œå†å°†è®¡ç®—çš„ç»“æžœé™¤ä»¥10007å–ä½™æ•°ï¼Œç›´æŽ¥è®¡ç®—ä½™æ•°å¾€å¾€æ¯”å…ˆç®—å‡ºåŽŸæ•°å†å–ä½™ç®€å•ã€‚
 	
-	Êý¾Ý¹æÄ£ÓëÔ¼¶¨
-	1 <= n <= 1,000,000¡£
+	æ•°æ®è§„æ¨¡ä¸Žçº¦å®š
+	1 <= n <= 1,000,000ã€‚
 	
-	½õÄÒ1
-	Ê¹ÓÃÊý×éÀ´±£´æFÐòÁÐ£¬Ö»±£´æ³ý10007µÄÓàÊý¡£
+	é”¦å›Š1
+	ä½¿ç”¨æ•°ç»„æ¥ä¿å­˜Fåºåˆ—ï¼Œåªä¿å­˜é™¤10007çš„ä½™æ•°ã€‚
 /*
 /*
-	1¡¢´´½¨ÊýÁÐFibonacciMod±£´æFibonacciÊýÁÐµÄ³ýÒÔ10007µÄÓàÊý£º
-		1¡¢¸ù¾ÝF1=F2=1,Ëã³öFibonacciModµÄFibonacciMod[0]ºÍFibonacciMod[1]
-		2¡¢ºóÃæµÄFibonacciMod[i]¸ù¾ÝnµÄÖµÑ­»·´æÈë
-	2¡¢Ö±½Ó¸ù¾Ý¸ø³öµÄn´ÓÊýÁÐFibonacciModÖÐÊä³ö¸ÃÓàÊý
+	1ã€åˆ›å»ºæ•°åˆ—FibonacciModä¿å­˜Fibonacciæ•°åˆ—çš„é™¤ä»¥10007çš„ä½™æ•°ï¼š
+		1ã€æ ¹æ®F1=F2=1,ç®—å‡ºFibonacciModçš„FibonacciMod[0]å’ŒFibonacciMod[1]
+		2ã€åŽé¢çš„FibonacciMod[i]æ ¹æ®nçš„å€¼å¾ªçŽ¯å­˜å…¥
+	2ã€ç›´æŽ¥æ ¹æ®ç»™å‡ºçš„nä»Žæ•°åˆ—FibonacciModä¸­è¾“å‡ºè¯¥ä½™æ•°
 */
 /*
 import java.io.BufferedReader;
@@ -55,21 +57,21 @@ class FibonacciMod{
 	public static void main(String args[]) throws NumberFormatException, IOException{
 		//Scanner input = new Scanner(System.in);
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-		int[] FibonacciMod = new int[1000001];//Êý×éFibonacciModÓÃÀ´±£´æÓàÊý
+		int[] FibonacciMod = new int[1000001];//æ•°ç»„FibonacciModç”¨æ¥ä¿å­˜ä½™æ•°
 		int n = 0;
 		//n = input.nextInt();
 		n = Integer.parseInt(input.readLine());
-		//Ñ­»·ÓÃÀ´ÕÒ³öÖ±µ½FibonacciMod[n]µÄÓàÊý
+		//å¾ªçŽ¯ç”¨æ¥æ‰¾å‡ºç›´åˆ°FibonacciMod[n]çš„ä½™æ•°
 		for(int i = 1;i <= n;i++){
-			//ÏÈ±£´æFibonacciMod[1]ºÍFibonacciMod[2]
+			//å…ˆä¿å­˜FibonacciMod[1]å’ŒFibonacciMod[2]
 			if(i==1)	
 				FibonacciMod[i] = 1;
 			else if(i==2)	
 				FibonacciMod[i] = 1;
-			else{		//Èç¹ûFibonacciMod[i-1]+FibonacciMod[i-2]<100007,ÄÇÃ´Ö±½Ó½«FibonacciMod[i-1]+FibonacciMod[i-2]¸³Öµ¸øFibonacciMod[i]
+			else{		//å¦‚æžœFibonacciMod[i-1]+FibonacciMod[i-2]<100007,é‚£ä¹ˆç›´æŽ¥å°†FibonacciMod[i-1]+FibonacciMod[i-2]èµ‹å€¼ç»™FibonacciMod[i]
 				if(FibonacciMod[i-1]+FibonacciMod[i-2]<10007)
 					FibonacciMod[i] = FibonacciMod[i-1] + FibonacciMod[i-2];
-			//·ñÔò½«FibonacciMod[i-1]+FibonacciMod[i-2]-100007¸³Öµ¸øFibonacciMod[i]
+			//å¦åˆ™å°†FibonacciMod[i-1]+FibonacciMod[i-2]-100007èµ‹å€¼ç»™FibonacciMod[i]
 				else
 					FibonacciMod[i] = FibonacciMod[i-1] + FibonacciMod[i-2] - 10007;
 			}
@@ -81,9 +83,9 @@ class FibonacciMod{
 } 
 */
 import java.util.Scanner;
-import java.io.BufferedReader;
+//import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+//import java.io.InputStreamReader;
 class Main {
 	public static void main(String[] args) throws IOException{
 	    //BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
@@ -91,6 +93,7 @@ class Main {
 	    //int n=Integer.valueOf(s);
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
+		input.close();
 	    int f1=1,f2=1,f3=0;
 	    if(n<3){
 	    	System.out.print("1");

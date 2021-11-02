@@ -1,17 +1,19 @@
+package oldCode;
+
 class pailie{
 	public static void main(String[] args){
 		String string = "ABCD";
 		char[] array = string.toCharArray();
-		pailie(array, 0);
+		pailief(array, 0);
 	}
 	
-	public static void pailie(char[] array, int index){
+	public static void pailief(char[] array, int index){
 		if(index == array.length)
 			print(array);
 		else
 			for(int i = index; i < array.length; i++){
 				exchange(array, index, i);
-				pailie(array, index+1);
+				pailief(array, index+1);
 				exchange(array, index, i);
 			}
 	}

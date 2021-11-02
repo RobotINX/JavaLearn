@@ -1,14 +1,17 @@
+package note;
+
 /*
 	Integer(int value) 
-          ¹¹ÔìÒ»¸öĞÂ·ÖÅäµÄ Integer ¶ÔÏó£¬Ëü±íÊ¾Ö¸¶¨µÄ int Öµ¡£ 
+          æ„é€ ä¸€ä¸ªæ–°åˆ†é…çš„ Integer å¯¹è±¡ï¼Œå®ƒè¡¨ç¤ºæŒ‡å®šçš„ int å€¼ã€‚ 
 	Integer(String s) 
-          ¹¹ÔìÒ»¸öĞÂ·ÖÅäµÄ Integer ¶ÔÏó£¬Ëü±íÊ¾ String ²ÎÊıËùÖ¸Ê¾µÄ int Öµ¡£ 
+          æ„é€ ä¸€ä¸ªæ–°åˆ†é…çš„ Integer å¯¹è±¡ï¼Œå®ƒè¡¨ç¤º String å‚æ•°æ‰€æŒ‡ç¤ºçš„ int å€¼ã€‚ 
 */
 
 import java.util.Scanner;
-class Main{
+class å¯¹è±¡ç±»å‹è½¬æ¢{
 	public static void main(String args[]){
 		Scanner input = new Scanner(System.in);
+		input.close();
 		String string = "";
 		string = getString(string, 3, 1, 65);
 		System.out.println(string);

@@ -1,3 +1,5 @@
+package note;
+
 class test2{
 	public static void setYanghuiTriangle(int[][] array){
 		for(int i = 1; i < array.length; i++){
@@ -16,5 +18,8 @@ class test2{
 		int[][] yanghuiTriangle = new int[100][100];
 		setYanghuiTriangle(yanghuiTriangle);
 		printArray2D(yanghuiTriangle);
+	}
+
+	private static void printArray2D(int[][] yanghuiTriangle) {
 	}
 }

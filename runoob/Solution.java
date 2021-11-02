@@ -1,3 +1,5 @@
+package runoob;
+
 class Solution {
     public static int strStr(String haystack, String needle) {
         if(haystack == ""){

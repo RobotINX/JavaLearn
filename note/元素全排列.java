@@ -1,55 +1,50 @@
+package note;
+import java.util.Scanner;
 /* 
-	public class Main {   
-    /** 
-     * ¡¾µİ¹é¡¿Çón¸öÔªËØµÄÈ«ÅÅÁĞ 
-     * abc acb bac bca cab cba 
-     * @param args 
-     */  
-    public static void f(char data[],int k){   //µ±Ç°¹Ø×¢µãk   
+	public class Main {
+    public static void f(char data[],int k){   //å½“å‰å…³æ³¨ç‚¹k   
         if(k==data.length){  
             for(int i=0;i<data.length;i++){  
                 System.out.print(data[i]+" ");  
             } 
             System.out.println();  
         }
-        //°ÑµÚÒ»¸öÔªËØ·ÅÕâÀï£¬ºóÃæµÄÔªËØÔÙ½øĞĞÈ«ÅÅÁĞ  
-        //ºóÃæµÄÔªËØ²»ÄÜ¼òµ¥·Å¹ıÀ´£º»á¸²¸Ç£¡£¡½»»»¼´¿É¡£  
-        for(int i=k;i<data.length;i++){   //Ñ­»·ÖĞµÄµİ¹é¾ÍÊÇ³ö¿Ú  
-        //½«Êı×éÃ¿¸öÔªËØºÍºóÃæµÄÔªËØ½øĞĞ½»»»£¬È»ºóµİ¹é      
-            {char temp=data[k];  //ÊÔÌ½  
+        //æŠŠç¬¬ä¸€ä¸ªå…ƒç´ æ”¾è¿™é‡Œï¼Œåé¢çš„å…ƒç´ å†è¿›è¡Œå…¨æ’åˆ—  
+        //åé¢çš„å…ƒç´ ä¸èƒ½ç®€å•æ”¾è¿‡æ¥ï¼šä¼šè¦†ç›–ï¼ï¼äº¤æ¢å³å¯ã€‚  
+        for(int i=k;i<data.length;i++){   //å¾ªç¯ä¸­çš„é€’å½’å°±æ˜¯å‡ºå£  
+        //å°†æ•°ç»„æ¯ä¸ªå…ƒç´ å’Œåé¢çš„å…ƒç´ è¿›è¡Œäº¤æ¢ï¼Œç„¶åé€’å½’      
+            {char temp=data[k];  //è¯•æ¢  
 			data[k]=data[i];  
             data[i]=temp;}  
             f(data,k+1);  
-/*          {char temp=data[k];   //£¡£¡£º´Ë´¦²»ĞèÒª»ØËİ 
+
+          {char temp=data[k];   //ï¼ï¼ï¼šæ­¤å¤„ä¸éœ€è¦å›æº¯ 
                 data[k]=data[i]; 
-                data[i]=temp;}*/  
+                data[i]=temp;}
         }
     }  
   
   
       
     public static void main(String[] args) {  
-        //½«Ò»¸öString¸ÄÎªcharÊı×é£¬´òÓ¡ËùÓĞÅÅÁĞĞÎÊ½  
-        char data[]= "ABC".toCharArray();    //×ª»¯ÎªcharĞÍÊı×éÓï¾ä  
+        //å°†ä¸€ä¸ªStringæ”¹ä¸ºcharæ•°ç»„ï¼Œæ‰“å°æ‰€æœ‰æ’åˆ—å½¢å¼  
+        char data[]= "ABC".toCharArray();    //è½¬åŒ–ä¸ºcharå‹æ•°ç»„è¯­å¥  
           
-        f(data,0);    //´«dataÊı×é  
+        f(data,0);    //ä¼ dataæ•°ç»„  
     }  
-}  
+}
 */
 
 
-
-
-import java.util.Scanner;
-class Main{
+class å…ƒç´ å…¨æ’åˆ—{
 	public static void main(String args[]){
 		Scanner input = new Scanner(System.in);
 		int[] array = {1,2,3,4};
-		int n = array.length;
+		input.close();
 		arrange(array,array.length);
 	}
 	
-	//ËùÓĞÔªËØÔÚÍ¬Ò»ĞĞÊä³ö
+	//æ‰€æœ‰å…ƒç´ åœ¨åŒä¸€è¡Œè¾“å‡º
 	public static void printArrayElement(int[] array){
 		for(int i = 0; i < array.length; i++){
 			if(i == array.length-1){

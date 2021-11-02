@@ -1,27 +1,29 @@
+package note;
+
 import java.util.Scanner;
 class test{
-	//¶şÎ¬Êı×é±éÀúËæ»ú¸³Öµ
+	//äºŒç»´æ•°ç»„éå†éšæœºèµ‹å€¼
 	public static void setRandomValue2D(int[][] array2D){
 		for(int i = 0; i < array2D.length; i++){
 			setRandomValue(array2D[i]);
 		}
 	}
 	
-	//Ò»Î¬Êı×é±éÀúËæ»ú¸³Öµ
+	//ä¸€ç»´æ•°ç»„éå†éšæœºèµ‹å€¼
 	public static void setRandomValue(int[] array){
 		for(int i = 0; i < array.length; i++){
 			array[i] = (int)(Math.random()*10);
 		}
 	}
 	
-	//¶şÎ¬Êı×é±éÀúÊä³ö
+	//äºŒç»´æ•°ç»„éå†è¾“å‡º
 	public static void printArray2D(int[][] array2D){
 		for(int i = 0; i < array2D.length; i++){
 			printArray(array2D[i]);
 		}
 	}
 	
-	//Ò»Î¬Êı×é±éÀúÊä³ö
+	//ä¸€ç»´æ•°ç»„éå†è¾“å‡º
 	public static void printArray(int[] array){
 		for(int i = 0; i < array.length; i++){
 			if(i == array.length - 1){
@@ -33,7 +35,7 @@ class test{
 		}
 	}
 	
-	//¶şÎ¬Êı×éÇóºÍ
+	//äºŒç»´æ•°ç»„æ±‚å’Œ
 	public static int sumArray2D(int[][] array){
 		int sum = 0;
 		for(int i = 0; i < array.length; i++){
@@ -43,7 +45,7 @@ class test{
 	}
 	
 	
-	//Ò»Î¬Êı×éÇóºÍ
+	//ä¸€ç»´æ•°ç»„æ±‚å’Œ
 	public static int sumArray(int[] array){
 		int sum = 0;
 		for(int i = 0; i < array.length; i++){
@@ -53,17 +55,17 @@ class test{
 	}
 	
 	/*
-		Ñî»ÔÈı½ÇĞÎ
+		æ¨è¾‰ä¸‰è§’å½¢
 			1
 			1 1	
 			1 2 1
 			1 3 3 1
 			1 4 6 4 1 
 			1 5 10 10 5 1
-		ĞĞÊıÎªi£¬ÁĞÊıÎªj
-		1¡¢(i,i) = 1
-		2¡¢(i,j) = (i-1,j)+(i-1,j-1)
-		3¡¢(i,1) = 1
+		è¡Œæ•°ä¸ºiï¼Œåˆ—æ•°ä¸ºj
+		1ã€(i,i) = 1
+		2ã€(i,j) = (i-1,j)+(i-1,j-1)
+		3ã€(i,1) = 1
 	*/
 	public static void setYanghuiTriangle(int[][] array){
 		for(int i = 0; i < array.length; i++){
@@ -77,14 +79,14 @@ class test{
 			}
 		}
 	}
-	//¶şÎ¬Êı×é±éÀúÊä³ö
+	//äºŒç»´æ•°ç»„éå†è¾“å‡º
 	public static void yanghuiTrianglePrintArray2D(int[][] array2D){
 		for(int i = 0; i < array2D.length; i++){
 			yanghuiTrianglePrintArray(array2D[i]);
 		}
 	}
 	
-	//Ò»Î¬Êı×é±éÀúÊä³ö
+	//ä¸€ç»´æ•°ç»„éå†è¾“å‡º
 	public static void yanghuiTrianglePrintArray(int[] array){
 		for(int i = 0; i < array.length; i++){
 			if(array[i] == 0){
@@ -124,9 +126,11 @@ class test{
 			yanghuiTrianglePrintArray2D(yanghuiTriangle);
 		*/
 		Scanner input = new Scanner(System.in);
+		input.close();
 		int i = input.nextInt();
 		int j = input.nextInt();
 		int result = getYanghuiTriangle(i,j);
+
 		System.out.println(result);
 	}
 }
