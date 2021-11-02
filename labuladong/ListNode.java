@@ -8,7 +8,7 @@ public class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
     //create a list by giving a nums array
-    public  static ListNode ListCreateNums(int[] nums) {
+    public static ListNode ListCreateNums(int[] nums) {
         if(nums.length == 0){
             return null;
         }
