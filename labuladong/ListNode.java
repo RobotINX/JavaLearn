@@ -30,4 +30,35 @@ public class ListNode {
         }
         System.out.println();
     }
+    //a new function to print the list by post order recursive
+    public void postOrderPrint(){
+        if(this.next == null){
+            System.out.print(this.val + " ");
+            return;
+        }
+        this.next.postOrderPrint();
+        System.out.print(this.val + " ");
+    }
+    //a new function to print the list by pre order recursive
+    public void preOrderPrint(){
+        System.out.print(this.val + " ");
+        if(this.next == null){
+            return;
+        }
+        this.next.preOrderPrint();
+    }
+    //isPalindrome by recursive
+    ListNode isPalindromeLeft = null;
+    public boolean isPalindrome(){
+        isPalindromeLeft = this;
+        return isPalindrome(this);
+    }
+    public boolean isPalindrome(ListNode right){
+        if(right == null)   return true;
+        boolean result = isPalindrome(right.next);
+        result = result && (isPalindromeLeft.val == right.val);
+        isPalindromeLeft = isPalindromeLeft.next;
+
+        return result;
+    }
 }

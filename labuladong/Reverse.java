@@ -45,8 +45,6 @@ public class Reverse {
         pre.next = reverseKGroup(node, k);
         ListNode last = reverseN(head, k);
         return last;
-
-
     }
 }
 
