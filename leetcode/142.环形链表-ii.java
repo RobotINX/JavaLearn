@@ -20,26 +20,27 @@ import labuladong.ListNode;
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
-        if(head == null || head.next == null)   return null;
-        ListNode slow = head;
-        ListNode fast = head.next;
-        while(slow != fast){
-            if(fast.next == null || fast.next.next == null) return null;
-            slow = slow.next;
-            fast = fast.next.next;
+        if (head == null) {
+            return null;
         }
-        // ListNode tmp = head;
-        // while(tmp != null){
-        //     System.out.print(tmp.val + " ");
-        //     tmp = tmp.next;
-        // }
-        // System.out.println();
-        slow = head;
-        while(slow != fast){
+        ListNode slow = head, fast = head;
+        while (fast != null) {
             slow = slow.next;
-            fast = fast.next;
+            if (fast.next != null) {
+                fast = fast.next.next;
+            } else {
+                return null;
+            }
+            if (fast == slow) {
+                ListNode ptr = head;
+                while (ptr != slow) {
+                    ptr = ptr.next;
+                    slow = slow.next;
+                }
+                return ptr;
+            }
         }
-        return slow;
+        return null;
     }
 }
 // @lc code=end
