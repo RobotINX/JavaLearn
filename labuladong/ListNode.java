@@ -20,6 +20,43 @@ public class ListNode {
         }
         return head;
     }
+    //delete the node with nums
+    public ListNode listDeleteNode(int... nums){
+        ListNode pre = new ListNode(-1);
+        pre.next = this;
+        ListNode head = pre;
+        for(int i = 0; i < nums.length; i++){
+            while(pre.next != null){
+                if(pre.next.val == nums[i]){
+                    if(pre.next.next == null){
+                        pre.next = null;
+                        break;
+                    }
+                    else{
+                        pre.next = pre.next.next;
+                    }
+                }
+                pre = pre.next;
+            }
+            pre = head;
+        }
+        return head.next;
+    }
+
+    //delete the node with num
+    public ListNode listDeleteNode(int num){
+        ListNode head = new ListNode(-1);
+        head.next = this;
+        ListNode pre = head;
+        int count = 1;
+        while(pre.next != null){
+            if(count == num){
+
+            }
+        }
+        return  head.next;
+    }
+
 
     //print the list
     public void listNodePrint(){
