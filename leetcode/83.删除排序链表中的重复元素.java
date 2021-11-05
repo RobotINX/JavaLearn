@@ -1,4 +1,6 @@
-import java.util.List;
+package leetcode;
+
+import labuladong.ListNode;
 
 /*
  * @lc app=leetcode.cn id=83 lang=java
@@ -19,21 +21,20 @@ import java.util.List;
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        if(head == null){
-            return head;
-        }
-        ListNode start = head;
-        ListNode pre = head;
-        while(head.next != null){
-            head = head.next;
-            if(head.val != pre.val){
-                pre = head;
+        if(head == null) return null;
+        ListNode fast = head.next;
+        ListNode slow = head;
+        while(fast != null){
+            if(slow.val == fast.val){
+                if(fast.next != null)   fast = fast.next;
+                else{ slow.next = null; fast = fast.next;}
+            }else{
+                slow.next = fast;
+                slow = slow.next;
+                fast = fast.next;
             }
-            else if(head.val == pre.val){
-                pre.next = head.next;
-            }
         }
-        return start;
+        return head;
     }
 }
 // @lc code=end

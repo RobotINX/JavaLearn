@@ -1,11 +1,11 @@
 package labuladong;
 
 public class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    public int val;
+    public ListNode next;
+    public ListNode() {}
+    public ListNode(int val) { this.val = val; }
+    public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
     //create a list by giving a nums array
     public static ListNode ListCreateNums(int[] nums) {
@@ -43,20 +43,30 @@ public class ListNode {
         return head.next;
     }
 
-    //delete the node with num
-    public ListNode listDeleteNode(int num){
+    //delete the node with order
+    public ListNode listDeleteNode(ListNode list, int order){
+        if(order < 1)   return list;
         ListNode head = new ListNode(-1);
-        head.next = this;
+        head.next = list;
         ListNode pre = head;
         int count = 1;
         while(pre.next != null){
-            if(count == num){
-
+            if(count == order){
+                if(pre.next.next == null){
+                    pre.next = null;
+                    break;
+                }
+                else{
+                    pre.next = pre.next.next;
+                    break;
+                }
             }
+            pre = pre.next;
+            count++;
         }
         return  head.next;
     }
-
+    
 
     //print the list
     public void listNodePrint(){

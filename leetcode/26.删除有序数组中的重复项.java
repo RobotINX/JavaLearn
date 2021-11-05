@@ -7,29 +7,14 @@
 // @lc code=start
 class Solution {
     public int removeDuplicates(int[] nums) {
-        if(nums.length == 0 || nums.length == 1){
-            return nums.length;
-        }
-        /*
-        int index = 0;
-        int correct = 1;
-        while(index + correct < nums.length){
-            if(nums[index] == nums[index + correct]){
-                correct++;
-                newLength--;
-            }
-            else{
-                nums[index + 1] = nums[index + correct];
-                index++;
-            }
-        }
-        return newLength;
-        */
+        if(nums.length <= 1)    return nums.length;
         int slow = 0;
-        for(int fast = 1; fast < nums.length; fast++){
-            if(nums[slow] != nums[fast]){
-                slow++;
-                nums[slow] = nums[fast];
+        int fast = 1;
+        while(fast < nums.length){
+            if(nums[slow] == nums[fast]){
+                fast++;
+            }else{
+                nums[++slow] = nums[fast++];
             }
         }
         return slow + 1;

@@ -7,31 +7,16 @@
 // @lc code=start
 class Solution {
     public int removeElement(int[] nums, int val) {
-
-        if(nums.length == 0){
-            return 0;
-        }
-        else if(nums.length == 1){
-            if(nums[0] == val){
-                return 0;
-            }
-            else{
-                return 1;
-            }
-        }
+        if(nums.length == 0)    return 0;
+        if(nums.length == 1 && nums[0] == val)  return 0;
         int slow = 0;
         int fast = 0;
         while(fast < nums.length){
             if(nums[fast] == val){
+                fast++;
+            }else{
+                nums[slow++] = nums[fast++];
             }
-            else{
-                nums[slow] = nums[fast];
-                slow++;
-            }
-            fast++;
-        }
-        for(int i = 0; i < nums.length; i++){
-            System.out.println(nums[i]);
         }
         return slow;
     }

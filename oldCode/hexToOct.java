@@ -50,10 +50,10 @@ class hexToOct {
     
     
     public static void main(String[] args) {
-        // TODO code application logic here
         Scanner input = new Scanner(System.in);
         String hexStr = input.next();
         input.close();
+        
         System.out.println(hexToOctf(hexStr));
     }
 }
