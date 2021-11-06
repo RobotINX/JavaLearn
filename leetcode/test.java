@@ -1,5 +1,3 @@
-package leetcode;
-
 class test{
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int[] nums = new int[nums1.length + nums2.length];
