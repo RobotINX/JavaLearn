@@ -1,4 +1,4 @@
-package labuladong;
+package DataStructure;
 
 public class ListNode {
     public int val;

@@ -1,4 +1,4 @@
-package labuladong;
+package DataStructure;
 
 public class ListTest {
     public static void main(String[] args) {

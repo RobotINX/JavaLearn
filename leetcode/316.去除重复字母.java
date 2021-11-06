@@ -1,3 +1,5 @@
+package leetcode;
+
 /*
  * @lc app=leetcode.cn id=316 lang=java
  *
@@ -7,7 +9,7 @@
 // @lc code=start
 class Solution {
     public String removeDuplicateLetters(String s) {
-        
+        return "";
     }
 }
 // @lc code=end
